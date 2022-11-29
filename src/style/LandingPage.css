@@ -1,0 +1,13 @@
+.myBG{
+    height: 100vh;
+    background-color: brown;
+}
+
+.myNavbar{
+    display: flex;
+    background-color: tomato;
+}
+
+.searchMovie{
+    display: flex;
+}
