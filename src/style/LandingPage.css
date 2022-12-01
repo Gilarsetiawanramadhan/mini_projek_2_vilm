@@ -1,7 +1,14 @@
 .myBG{
     height: 100vh;
-    background: url(../assets/imageBG/cinema-09.jpg);
+    background-image: url(../assets/imageBG/cinema-09.jpg);
     background-size: cover;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
 }
 
 .myNavbar{
@@ -10,13 +17,25 @@
 
 .NavBrand{
     font-Family: 'Zen Dots',Cursive;
+
 }
 
-
-.input{
-    align-content: center;
-    width: 20vw;
+.input svg{
+    font-size: 38px;
     position: relative;
+    font-weight: bold;
     right: 50px;
-    padding: 5px;
+    top: 0px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.btn-login{
+    height: fit-content;
+    position: relative;
+    left: 20px;
+}
+
+.btn-sigin{
+    margin-left: 5px;
 }

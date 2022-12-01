@@ -6,11 +6,10 @@ function App() {
 
   
   return (
-    <div className='myBG'>
-      <div className='myNavbar'>
-        <NavbarMovie/> 
+      <div className='myBG'>
+        <NavbarMovie/>
+        <h1>hello world</h1>
       </div>
-    </div>
   );
 }
 

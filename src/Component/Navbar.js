@@ -1,36 +1,52 @@
-import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { BsFillCaretRightSquareFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
-
-
 const NavbarMovie = () => {
-    return(
-        <Navbar expand="lg">
-            <Container>
-                <Navbar.Brand className="NavBrand text-white" href="#home" style={{fontSize:"2vw", }}>
-                    <BsFillCaretRightSquareFill style={{color:"aqua", fontSize:"3vw", paddingRight:"5px", fontFamily: 'Zen Dots-Cursive'}}/>
+
+
+return (
+    <>
+        <Navbar bg='currentColor' variant='dark' expand="lg">
+            <Container fluid>
+                <Navbar.Brand href="#">
+                <BsFillCaretRightSquareFill
+                style={{ color: "aqua", fontSize: "30px", paddingRight: "5px" }}
+                />
                     BIOSKOP CINEMA
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor:"white"}} />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="d-flex me-auto">
-                            <Nav.Link href="#home" style={{color:"white", fontFamily: 'FredokaOne-cursive', fontSize:"20px"}}>Home</Nav.Link>
-                            <Nav.Link href="#link" style={{color:"white", fontFamily: 'FredokaOne-cursive', fontSize:"20px"}}>Series</Nav.Link>
-                            <Nav.Link href="#home" style={{color:"white", fontFamily: 'FredokaOne-cursive', fontSize:"20px"}}>Action</Nav.Link>
-                            <Nav.Link href="#home" style={{color:"white", fontFamily: 'FredokaOne-cursive', fontSize:"20px"}}>Populer</Nav.Link>
-                        </Nav>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                        >
+                            <Nav.Link href="#action1">Home</Nav.Link>
+                            <Nav.Link href="#action2">SERIES</Nav.Link>
+                            <Nav.Link href="#action3">POPULER</Nav.Link>
+                    </Nav>
+                    <Form className="input d-flex">
+                    <Form.Control
+                        type="search"
+                        placeholder="Search"
+                        className="me-2"
+                        aria-label="Search"
+                        style={{ borderRadius:"20px"}}
+                    />
+                    <BsSearch />
+                    <Button variant="outline-success">login</Button>
+                    <Button className='btn-sigin' variant="outline-success">SIGIN</Button>
+                </Form>
                 </Navbar.Collapse>
-                <Form.Group className="input">
-                            <Form.Control type="text" placeholder =" serach...." style={{borderRadius: "20px"}} />
-                        </Form.Group>
-                        <BsSearch style={{position: "relative", right:" 160px"}}/>
-                        <Button variant="outline-primary" style={{borderRadius: "20px", position: "relative", right: "33px"}}>LOGIN</Button>{' '}
-                        <Button variant="outline-primary" style={{borderRadius:"20px"}}>SIGIN</Button>{' '}
             </Container>
         </Navbar>
-    )
-}
+    </>
+);
+};
 
 export default NavbarMovie;
