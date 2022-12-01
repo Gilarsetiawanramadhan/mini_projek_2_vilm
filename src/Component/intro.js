@@ -1,11 +1,20 @@
-
-
-const introMovie=()=>{
+import { Container } from "react-bootstrap";
+import { BsFillCaretRightSquareFill } from "react-icons/bs";
+const IntroMovie =()=>{
 
 
     return(
-        <div className="container">
-            <h1>haloooooo</h1>
-        </div>
+        <>
+            <Container>
+                <div className="logo-Movie">
+                <BsFillCaretRightSquareFill
+                style={{ color: "aqua", fontSize: "30px", paddingRight: "5px" }}
+                />
+                BIOSKOP CINEMA
+                </div>
+            </Container>
+        </>
     )
 }
+
+export default IntroMovie;

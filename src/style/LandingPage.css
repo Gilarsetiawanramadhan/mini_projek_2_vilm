@@ -30,12 +30,22 @@
     border-radius: 20px;
 }
 
-.btn-login{
-    height: fit-content;
-    position: relative;
-    left: 20px;
-}
-
 .btn-sigin{
     margin-left: 5px;
+}
+
+.logo-Movie{
+    font-size: 50px;
+}
+
+.Movie-container{
+    width: 100%;
+}
+
+.Movie-Wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: aliceblue;
 }
