@@ -5,13 +5,14 @@ const IntroMovie =()=>{
 
     return(
         <>
-            <Container>
+            <Container style={{height:"70vh"}}>
                 <div className="logo-Movie">
                 <BsFillCaretRightSquareFill
                 style={{ color: "aqua", fontSize: "30px", paddingRight: "5px" }}
                 />
                 BIOSKOP CINEMA
                 </div>
+                
             </Container>
         </>
     )

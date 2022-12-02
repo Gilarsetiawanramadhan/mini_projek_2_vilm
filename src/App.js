@@ -1,36 +1,44 @@
 import './App.css';
 import NavbarMovie from './Component/Navbar';
 import IntroMovie from './Component/intro';
-import Card from 'react-bootstrap/Card';
+import { getMovielist } from './api';
+import { useEffect, useState } from 'react';
 import './style/LandingPage.css'
 
-function App() {
 
-  
+const App= ()=>{
+  const[popularMovies, setPopularMovies] = useState([])
+  // const imageUrl = process.env.REACT_APP_BASEIMGURL
+
+  useEffect(() => {
+      getMovielist().then((result) =>{
+        setPopularMovies(result)
+      })
+  },[])
+
+  const PopularMovieList = () => {
+    return popularMovies.map((movie, i) => {
+      return(
+        <div key={i}>
+            <img className='movie-image' src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}/>
+            <div className='movies-title'>{movie.title}</div>
+            <div className='movies-rate'>{movie.vote_average}</div>
+                <div className='movie-popular'>{movie.popularity}</div>
+        </div>
+      )
+    })
+  }
+
   return (
-    <>
       <div className='myBG'>
         <NavbarMovie/>
-        <h1>hello world</h1>
         <IntroMovie/>
-        <div className='Movie-Container'>
-          <div className='Movie-Wraper'>
-            <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Rate>
-                      8,9
-                </Card.Rate>
-                <Card.Date>
-                  10/29/2022
-                </Card.Date>
-              </Card.Body>
-            </Card>
+        <div className='movie-container'>
+          <div className='movie-wraper'>
+            <PopularMovieList/>
           </div>
         </div>
       </div>
-    </>
   );
 }
 
