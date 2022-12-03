@@ -5,15 +5,15 @@
 }
 
 .movie-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
 .movie-wraper{
+    display: inline-table;
     text-align: center;
     width: 15vw;
     background-color: aliceblue;
@@ -52,4 +52,9 @@
 
 .logo-Movie{
     font-size: 50px;
+}
+
+.movie-image{
+    width: fit-content;
+    max-height: fit-content;
 }
