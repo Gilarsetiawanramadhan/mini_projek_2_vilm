@@ -1,42 +1,47 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 const Login = () => {
 
     const formik = useFormik({
         initialValues: {
-            UserName: '',
+            username: '',
             password: '',
         },
         validationSchema: Yup.object({
             UserName: Yup.string()
                 .min(8,'minimun 8 characthers')
-                .max(15, 'Must be 15 characters or less')
                 .required('Required'),
             password: Yup.string()
-                .max(20, 'Must be 20 characters or less')
+                .min(8,'minimun 8 characthers')
                 .required('Required'),
             }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            console.log(values)
+            axios.get(`${process.env.REACT_APP_BASEURL}`)
+            .then(response => {
+                console.log(response.data)
+            })
+
         },
     });
 
     return(
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="User Name">User Name</label>
+            <label htmlFor="username">User Name</label>
                 <input
-                    id="User Name"
-                    name="User Name"
+                    id="username"
+                    name="username"
                     type="text"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.UserName}
+                    value={formik.values.username}
                 />
-                {formik.touched.UserName && formik.errors.UserName ? (
-                <div>{formik.errors.UserName}</div>
+                {formik.touched.username && formik.errors.username ? (
+                <div style={{color:"red"}}>{formik.errors.username}</div>
                 ) : null}
-                <br/>
+                <br/><br/>
             <label htmlFor="password">password</label>
                 <input
                     id="password"
@@ -47,7 +52,7 @@ const Login = () => {
                     value={formik.values.password}
                 />
                 {formik.touched.password && formik.errors.password ? (
-                <div>{formik.errors.password}</div>
+                <div style={{color:"red"}}>{formik.errors.password}</div>
                 ) : null}
                 <br/>
             <button type="submit">Submit</button>

@@ -2,21 +2,24 @@
     height: 100vh;
     background-image: url(../assets/imageBG/cinema-09.jpg);
     background-size: cover;
-}
-
-.movie-container{
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
-.movie-wraper{
+.movie-Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;  
+}
+
+.movie-Wraper{
     display: inline-table;
     text-align: center;
-    width: 15vw;
+    width: 500px;
     background-color: aliceblue;
+    display: flex;
+    gap: 20PX;
 }
 
 
