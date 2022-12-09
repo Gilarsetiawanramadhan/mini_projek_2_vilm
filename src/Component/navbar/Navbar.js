@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Logout from '../LogOut';
 import { BsFillCaretRightSquareFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
@@ -39,8 +40,9 @@ return (
                         style={{ borderRadius:"20px"}}
                     />
                     <BsSearch />
-                    <Button variant="outline-success">login</Button>
-                    <Button className='btn-sigin' variant="outline-success">SIGIN</Button>
+                    <Nav.Link>
+                        <Logout/>
+                    </Nav.Link>
                 </Form>
                 </Navbar.Collapse>
             </Container>
