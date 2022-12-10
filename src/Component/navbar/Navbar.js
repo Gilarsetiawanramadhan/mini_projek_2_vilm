@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -7,11 +6,9 @@ import Logout from '../LogOut';
 import { BsFillCaretRightSquareFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
-const NavbarMovie = () => {
-
-
-return (
-    <>
+const navbar = () => {
+    return (
+        <>
         <Navbar bg='currentColor' variant='dark' expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#">
@@ -48,7 +45,7 @@ return (
             </Container>
         </Navbar>
     </>
-);
+    );
 };
 
-export default NavbarMovie;
+export default navbar;
